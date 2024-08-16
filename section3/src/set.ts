@@ -21,12 +21,12 @@ function neverExam() {
   //   let f: never = {};
 
   let neverVar: never;
-  let num: number = neverVar;
-  let str: string = neverVar;
-  let bool: boolean = neverVar;
-  let undefinedVar: undefined = neverVar;
-  let nullVar: null = neverVar;
-  let obj: {} = neverVar;
+  //   let num: number = neverVar;
+  //   let str: string = neverVar;
+  //   let bool: boolean = neverVar;
+  //   let undefinedVar: undefined = neverVar;
+  //   let nullVar: null = neverVar;
+  //   let obj: {} = neverVar;
 }
 
 // void 타입
