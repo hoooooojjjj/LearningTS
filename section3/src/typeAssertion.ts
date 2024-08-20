@@ -50,3 +50,12 @@ let post: Post = {
 };
 
 const postLength: number = post.author!.length;
+
+type Todos = string[];
+
+const todos: Todos = [];
+
+for (let i: number = 0; i < 5; i++) {
+  todos.push("밥먹기");
+}
+console.log(todos);
