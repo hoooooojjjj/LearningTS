@@ -8,5 +8,5 @@
     "esModuleInterop": true,
     "moduleDetection": "force"
   },
-  "include": ["section3/src"]
+  "include": ["section3/src", "section4/src"]
 }
