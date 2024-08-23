@@ -6,7 +6,8 @@
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "allowJs": true
   },
-  "include": ["section3/src", "section4/src", "section5/src"]
+  "include": ["section3/src", "section4/src", "section5/src", "section6/src"]
 }
