@@ -97,4 +97,16 @@ type ThumbnailURL1 = {
   };
 };
 
-type ThumbnailURL = Record<"large" | "medium" | "small", { url: string }>;
+type ThumbnailURL = Record<
+  "large" | "medium" | "small | watch",
+  { url: string; id: number }
+>;
+
+type RecordThumbnailURL<K extends string | number | symbol, V> = {
+  [key in K]: V;
+};
+
+type ThumbnailURL2 = RecordThumbnailURL<
+  "large" | "medium" | "small | watch",
+  { url: string; id: number }
+>;
