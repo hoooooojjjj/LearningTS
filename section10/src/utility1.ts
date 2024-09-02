@@ -34,7 +34,7 @@ const post3: RequiredPost<Post> = {
   thumbnailURL: "png",
 };
 
-const post: Readonly<Post> = {
+const post4: Readonly<Post> = {
   title: "제목",
   tags: ["1", "2"],
   content: "내용",
@@ -45,4 +45,56 @@ type ReadonlyPost<T> = {
   readonly [key in keyof T]: T[key];
 };
 
-post.title = "";
+// post.title = "";
+
+const legacyPost1: Pick<Post, "title" | "content"> = {
+  title: "옛날 제목",
+  content: "옛날 내용",
+};
+
+type PickPost<T, K extends keyof T> = {
+  [key in K]: T[key];
+};
+
+const legacyPost2: Omit<Post, "tags"> = {
+  title: "옛날 제목",
+  content: "옛날 내용",
+};
+
+type Exclude<U, V> = U extends V ? never : U;
+
+type OmitPost<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+// T = Post, K = "tags"
+// Pick<Post, Exclude<"title" | "content" | "tags" | "thumbnailURL", "tags">>
+// Pick<Post, "title" | "content" | "thumbnailURL">
+/* {
+title : string;
+content : string;
+thumbnailURL : string
+}*/
+
+const legacyPost: OmitPost<Post, "tags"> = {
+  title: "옛날 제목",
+  content: "옛날 내용",
+};
+
+type ThumbnailURL1 = {
+  large: {
+    url: string;
+    id: number;
+  };
+  medium: {
+    url: string;
+    id: number;
+  };
+  small: {
+    url: string;
+    id: number;
+  };
+  watch: {
+    url: string;
+    id: number;
+  };
+};
+
+type ThumbnailURL = Record<"large" | "medium" | "small", { url: string }>;
