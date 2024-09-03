@@ -1,1 +1,23 @@
 node_modules
+
+section11/node_modules
+section11/.pnp
+section11/.pnp.js
+
+# testing
+section11/coverage
+
+# production
+section11/build
+
+# misc
+section11/DS_Store
+section11/env.local
+section11/env.development.local
+section11/env.test.local
+section11/env.production.local
+
+section11/npm-debug.log*
+section11/yarn-debug.log*
+section11/yarn-error.log*
+
