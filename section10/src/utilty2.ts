@@ -25,3 +25,12 @@ type Return<T extends (...args: any) => any> = T extends (
 ) => infer R
   ? R
   : never;
+
+let result: string =
+  "안녕하세요, 유호준입니다. 저는 서울대학교 언론정보학과 학생입니다.";
+
+console.log(
+  result.includes("유호준"),
+  result.includes("대학교"),
+  result.includes("한양대학교")
+);
