@@ -1,19 +1,21 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useContext, useState } from "react";
+import { TodosContext, TodosDispatchContext, useDispatchContext } from "../App";
 
 interface Props {
-  onSubmit: (text: string) => void;
   children: ReactElement;
 }
 
 function Editor(props: Props) {
   const [text, setText] = useState<string>("");
 
+  const dispatchContext = useDispatchContext();
+
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
 
   const onClick = () => {
-    props.onSubmit(text);
+    dispatchContext.onSubmit(text);
     setText("");
   };
 

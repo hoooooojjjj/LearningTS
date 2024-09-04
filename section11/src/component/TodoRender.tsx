@@ -1,16 +1,21 @@
-import React from 'react'
-import { Todo } from '../types';
+import React from "react";
+import { Todo } from "../types";
+import { useDispatchContext } from "../App";
 
 interface Props {
-    todo : Todo
-    onDelete: (id:number)=>void
+  todo: Todo;
 }
 
-
-function TodoRender(props:Props) {
+function TodoRender(props: Props) {
+  const dispatchContext = useDispatchContext();
   return (
-  <div>{props.todo.todo}<button onClick={()=>props.onDelete(props.todo.id)}>Delete</button></div>
-  )
+    <div>
+      {props.todo.todo}
+      <button onClick={() => dispatchContext.onDelete(props.todo.id)}>
+        Delete
+      </button>
+    </div>
+  );
 }
 
-export default TodoRender
+export default TodoRender;
